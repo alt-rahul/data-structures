@@ -42,7 +42,14 @@ class Tree():
 '''
 next up, graphs (not graphs as in drawing a line in a graph -- graphs)
 '''
+class Graph():
+    def __init__(self):
+        self.verticies = {}
 
+    def add_vertex(self, vertex, data):
+        self.verticies[vertex] = data
+    
+    
 
 
 

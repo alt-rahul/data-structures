@@ -46,14 +46,15 @@ class Graph():
     def __init__(self):
         self.verticies = {}
 
-    def add_vertex(self, vertex, data):
-        self.verticies[vertex] = data
-    
+    def add_vertex(self, vertex):
+        self.verticies[vertex] = []
+    def add_edge(self, vertex, target, weight):
+        self.verticies[vertex].append([target, weight])
 
 sample_graph = Graph()
 
-sample_graph.add_vertex('colone', '43')
-print(sample_graph)
+sample_graph.add_vertex('colone')
+
 
 
 

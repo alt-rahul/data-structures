@@ -49,10 +49,15 @@ class Graph():
     def add_vertex(self, vertex, data):
         self.verticies[vertex] = data
     
-    
+
+sample_graph = Graph()
+
+sample_graph.add_vertex('colone', '43')
+print(sample_graph)
 
 
 
 '''
+
 binary search baby...
 '''

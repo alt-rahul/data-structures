@@ -82,4 +82,9 @@ class BinarySearchTree():
                     else:
                         current_node = current_node.right_side
                 return False
-            
+        
+    def find_min(self):
+        current_node = self.root
+        while current_node.left_side:
+            current_node = current_node.left_side
+        return current_node.data

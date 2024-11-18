@@ -55,10 +55,31 @@ sample_graph = Graph()
 
 sample_graph.add_vertex('colone')
 
-
-
-
 '''
-
 binary search baby...
 '''
+
+class BinarySearchTree():
+    def __init__(self):
+        self.root = None
+
+    def insert(self, data):
+        new_node = Tree(data)
+        if self.root == None:
+            self.root = new_node
+        else:
+            current_node = self.root
+            while True:
+                if new_node.data < current_node.data:
+                    if current_node.left_side == None:
+                        current_node.left_side = new_node
+                    else:
+                        current_node = current_node.left_side
+                elif new_node.data > current_node.data:
+                    if current_node.right_side == None:
+                        current_node.right_side = new_node
+                        return
+                    else:
+                        current_node = current_node.right_side
+                return False
+            

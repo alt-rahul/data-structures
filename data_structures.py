@@ -34,10 +34,10 @@ remember that in a tree, the left side is taken when the node is smaller than ta
 '''
 
 class Tree():
-    def __init__(self, data, left_side, right_side):
+    def __init__(self, data, left_child, right_child):
         self.data = data
-        self.left_side = left_side
-        self.right_side = right_side
+        self.left_child = left_child
+        self.right_child = right_child
 
 '''
 next up, graphs (not graphs as in drawing a line in a graph -- graphs)
@@ -71,20 +71,27 @@ class BinarySearchTree():
             current_node = self.root
             while True:
                 if new_node.data < current_node.data:
-                    if current_node.left_side == None:
-                        current_node.left_side = new_node
+                    if current_node.left_child == None:
+                        current_node.left_child = new_node
                     else:
-                        current_node = current_node.left_side
+                        current_node = current_node.left_child
                 elif new_node.data > current_node.data:
-                    if current_node.right_side == None:
-                        current_node.right_side = new_node
+                    if current_node.right_child == None:
+                        current_node.right_child = new_node
                         return
                     else:
-                        current_node = current_node.right_side
+                        current_node = current_node.right_child
                 return False
         
     def find_min(self):
         current_node = self.root
-        while current_node.left_side:
-            current_node = current_node.left_side
+        while current_node.left_child:
+            current_node = current_node.left_child
+        return current_node.data
+
+    def in_order(self, current_node):
+        if current_node:
+            current_node = self.in_order(current_node.left_child)
+            print(current_node.data)
+            current_node = self.in_order(current_node.right_child)
         return current_node.data

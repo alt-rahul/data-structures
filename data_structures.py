@@ -100,7 +100,6 @@ class BinarySearchTree():
 recurssion sort
 '''
 def binary_search(target_value, list):
-
     if len(list) ==0:
         return False
     
@@ -113,3 +112,19 @@ def binary_search(target_value, list):
         else: 
             return binary_search(target_value, list[middle:])
 
+
+'''
+search algos - DFS - target far away from starting
+'''
+
+
+'''
+search algos - BFS - target close to from starting
+'''
+
+import queue
+
+def breadth_first_search(graph, initial_value, target_value ):
+    visted_vertexes = []
+    bfs_queue = queue.LifoQueue()
+    

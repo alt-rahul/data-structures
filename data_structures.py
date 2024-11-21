@@ -95,3 +95,21 @@ class BinarySearchTree():
             print(current_node.data)
             current_node = self.in_order(current_node.right_child)
         return current_node.data
+
+'''
+recurssion sort
+'''
+def binary_search(target_value, list):
+
+    if len(list) ==0:
+        return False
+    
+    while True:
+        middle = int(len(list)/2)
+        if (target_value == list[middle]):
+            return True
+        elif (target_value < list[middle]):
+            return binary_search(target_value, list[:middle])
+        else: 
+            return binary_search(target_value, list[middle:])
+

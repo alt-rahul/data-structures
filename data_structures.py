@@ -116,15 +116,45 @@ def binary_search(target_value, list):
 '''
 search algos - DFS - target far away from starting
 '''
+import queue
 
+# this is for graphs
+def depth_first_search(visted_vertexes, graph, current_vertex):
+    if current_vertex not in visted_vertexes:
+        print(current_vertex)
+        visted_vertexes.add(current_vertex)
+        for adjacted_vertex in graph[current_vertex]:
+            depth_first_search(visted_vertexes, graph, adjacted_vertex)
 
+class dfs_tree():
+    def __init__(self, root):
+        self.root = root
+    
+    #in order is first starts from ends nodes, left end node, top node, right end node, repeat.
+    def in_order(self, current_node):
+
+        if current_node:
+            self.in_order(current_node.left_child)
+            print(current_node.data)
+            self.in_order(current_node.right_child)
+
+    # pre order is left end node all the way and reverse to right end 
+    def pre_order(self, current_node):
+        if current_node:
+            print(current_node.data)
+            self.pre_order(current_node.left_child)
+            self.pre_order(current_node.right_chilld)
+
+    #post order is opposite of pre order but im not gonna be coding that one up
+
+    
 '''
 search algos - BFS - target close to from starting
 '''
 
-import queue
+
+
 
 def breadth_first_search(graph, initial_value, target_value ):
     visted_vertexes = []
     bfs_queue = queue.LifoQueue()
-    

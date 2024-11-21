@@ -156,3 +156,16 @@ search algos - BFS - target close to from starting
 def breadth_first_search(graph, initial_value, target_value ):
     visted_vertexes = []
     bfs_queue = queue.LifoQueue()
+    visted_vertexes.append(initial_value)
+    bfs_queue.put(initial_value)
+
+    while not bfs_queue.empty():
+        currrent_node = bfs_queue.get()
+        if currrent_node == target_value:
+            return True
+        for adjacted_node in graph[currrent_node]:
+            if adjacted_node not in visted_vertexes:
+                visted_vertexes.append(adjacted_node)
+                bfs_queue.put(adjacted_node)
+
+

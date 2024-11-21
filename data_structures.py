@@ -147,12 +147,10 @@ class dfs_tree():
 
     #post order is opposite of pre order but im not gonna be coding that one up
 
-    
+
 '''
 search algos - BFS - target close to from starting
 '''
-
-
 
 
 def breadth_first_search(graph, initial_value, target_value ):
